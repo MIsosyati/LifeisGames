@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lifeistech.android.lifeisgames">
+
+    <application
+        android:name=".LifeisGames"
+        android:allowBackup="true"
+        android:icon="@drawable/applicationlogo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applicationlogo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light"
+        tools:ignore="Instantiatable">
+        <activity android:name=".Yataiactivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ShopActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RankingActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".KingyoMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ResultActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".RealMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".BlockBreakingMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".DrawMainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MSShopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PMSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MSActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>
