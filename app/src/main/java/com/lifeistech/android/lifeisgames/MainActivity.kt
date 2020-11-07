@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         setTitle( "ホーム画面" );
 
-        coinlayout.visibility = View.INVISIBLE;
 
         button1.setOnClickListener {
             val intent = Intent(this, PMSActivity::class.java)

@@ -12,22 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light"
         tools:ignore="Instantiatable">
-        <activity android:name=".Yataiactivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ShopActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RankingActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".KingyoMainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ResultActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RealMainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".BlockBreakingMainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DrawMainActivity"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".kingyosukui.FishlibraryActivity"></activity>
+        <activity
+            android:name=".Yataiactivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RankingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".KingyoMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RealMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BlockBreakingMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DrawMainActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
