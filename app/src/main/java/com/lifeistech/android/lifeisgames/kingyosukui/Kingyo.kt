@@ -28,19 +28,27 @@ class Rantyu(imageView: ImageView):Base("蘭鋳(赤白)", 15, 0, imageView,30){}
 
 class Tantyou(imageView: ImageView):Base("丹頂", 20, 0, imageView,25){}
 
+class Oranda(imageView: ImageView):Base("オランダ獅子頭", 20, 0, imageView,25){}
+
 class Pinpom(imageView: ImageView):Base("ピンポンパール", 20, 0, imageView,23){}
 
-class Syubun(imageView: ImageView):Base("朱文金", 20, 0, imageView,23){}
+class Syubun(imageView: ImageView):Base("朱文金", 18, 0, imageView,23){}
 
 class Tokyo(imageView: ImageView):Base("江戸錦", 20, 0, imageView,23){}
 
-class Kometto(imageView: ImageView):Base("コメット", 20, 0, imageView,23){}
-
 class Sakura(imageView: ImageView):Base("桜錦", 20, 0, imageView,23){}
+
+class Azuma(imageView: ImageView):Base("東錦", 20, 0, imageView,23){}
+
+class Kometto(imageView: ImageView):Base("コメット", 20, 0, imageView,23){}
 
 class Suihou(imageView: ImageView):Base("水泡眼", 20, 0, imageView,23){}
 
+class Tyoten(imageView: ImageView):Base("頂点眼", 20, 0, imageView,23){}
+
+
 class Oosan(imageView: ImageView):Base("オオサンショウウオ", 100, 0, imageView,15){}
+
 
 
 

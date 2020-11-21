@@ -259,7 +259,7 @@ private fun setAnimRepeat(set:AnimatorSet, view:ImageView){
 }
 
 private fun popKingyo(view: ImageView):Base{
-    val pop = Random.nextInt(142)
+    val pop = Random.nextInt(173)
     when{
         pop < 15 -> {
             val kingyo = WakinB(view)
@@ -368,6 +368,44 @@ private fun popKingyo(view: ImageView):Base{
             return kingyo
 
         }
+
+        pop <145 -> {
+            val kingyo = Oranda(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+
+        }
+
+        pop <150 -> {
+            val kingyo = Azuma(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+
+        }
+
+        pop <158 -> {
+            val kingyo = Rukin(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+
+        }
+
+        pop <166 -> {
+            val kingyo = RukinK(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+
+        }
+
+        pop <171 -> {
+            val kingyo = Tyoten(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+
+        }
+
+
+
 
         else -> {
             val kingyo = Oosan(view)
