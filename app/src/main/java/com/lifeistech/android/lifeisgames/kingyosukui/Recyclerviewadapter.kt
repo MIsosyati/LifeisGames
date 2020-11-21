@@ -1,12 +1,14 @@
 package com.lifeistech.android.lifeisgames.kingyosukui
 
 import android.content.Context
+import android.graphics.Color
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.lifeistech.android.lifeisgames.R
 
@@ -17,6 +19,7 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
         val kinygyoview:ImageView = view.findViewById(R.id.imageView8)
         val kingyoname:TextView = view.findViewById(R.id.fishname)
         val kingyonumber:TextView = view.findViewById(R.id.textView9)
+       // val container: ConstraintLayout = view.findViewById(R.id.container)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
@@ -30,9 +33,19 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
        val item =items[position]
-        holder.kinygyoview.setImageResource(item.fishimage)
-        holder.kingyoname.text = item.fishName
-        holder.kingyonumber.text = item.fishnumber
+        if(item.isCatched){
+         //捕まえていたときに表示するコードを書く
+            holder.kinygyoview.setImageResource(item.fishimage)
+            holder.kingyoname.text = item.fishName
+            holder.kingyonumber.text = item.fishnumber
+        }else{
+            //捕まえてない時に表示するものを書く
+            holder.kinygyoview.setImageResource(R.drawable.nodata)
+            holder.kingyoname.text = "?????"
+            holder.kingyonumber.text = item.fishnumber
+        }
+
+        //holder.container.setBackgroundColor(Color.rgb(0, 255, 0))
 
     }
 
