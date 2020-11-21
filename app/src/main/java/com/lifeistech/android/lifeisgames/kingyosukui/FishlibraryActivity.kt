@@ -2,12 +2,15 @@ package com.lifeistech.android.lifeisgames.kingyosukui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.lifeistech.android.lifeisgames.R
+import kotlinx.android.synthetic.main.activity_fishlibrary.*
 
 class FishlibraryActivity : AppCompatActivity() {
  val fish_library_data: List<Fish_library_data> = listOf(
     Fish_library_data(R.drawable.wakinr,"No.001","ワキン(赤)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ"),
-    Fish_library_data(R.drawable.nodata,"No.002","ワキン(黒)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ"),
+    Fish_library_data(R.drawable.wakinw,"No.002","ワキン(黒)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ"),
      Fish_library_data(R.drawable.nodata,"No.003","ワキン(サラサ)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ"),
      Fish_library_data(R.drawable.nodata,"No.004","デメキン(赤)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ"),
      Fish_library_data(R.drawable.nodata,"No.005","デメキン(黒)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ"),
@@ -27,12 +30,17 @@ class FishlibraryActivity : AppCompatActivity() {
      Fish_library_data(R.drawable.nodata,"No.0019" ,"水泡眼","目の下に大きな袋をぶら下げた品種。袋は破れやすく、出目金と同じく弱りやすい"),
      Fish_library_data(R.drawable.nodata,"No.0020" ,"ピンポンパール","まんまるで粒々した体をしている。そのため泳げなくなることも多々あるらしい"),
      Fish_library_data(R.drawable.nodata,"No.0021" ,"頂点眼","名前の通り目が真上を向いている。インパクトがある姿は水槽で見ていて面白い"),
-     Fish_library_data(R.drawable.nodata,"No.00000" ,"オオサンショウウオ","特別天然記念物で世界最大級の両生類。寿命は七十年近くある個体も。瞳が可愛い、可愛い。何故こいつが0なのか…それは主の推しだからである。不平不満は認めない")
+     Fish_library_data(R.drawable.nodata,"No.00000" ,"オオサンショウウオ","特別天然記念物で世界最大級の両生類。寿命は七十年近くある個体も。瞳が可愛い、可愛い。何故こいつがNO.0なのか…それは主の推しだからである。不平不満は認めない")
  )
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fishlibrary)
+
+       val adapter = Recyclerviewadapter(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+        adapter.addAll(fish_library_data)
     }
 }
