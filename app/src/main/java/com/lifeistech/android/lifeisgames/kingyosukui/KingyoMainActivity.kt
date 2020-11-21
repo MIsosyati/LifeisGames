@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.lifeistech.android.lifeisgames.kingyosukui.FishlibraryActivity
 import kotlinx.android.synthetic.main.activity_kingyomain.*
 
 
@@ -34,8 +35,8 @@ class KingyoMainActivity : AppCompatActivity() {
         }
 
         zukanbutton.setOnClickListener {
-            val toast=  Toast.makeText(applicationContext, "Coming soon.....", Toast.LENGTH_SHORT).show()
-
+            val intent= Intent(this, FishlibraryActivity::class.java)
+            startActivity(intent);
         }
 
         Rankbutton.setOnClickListener {

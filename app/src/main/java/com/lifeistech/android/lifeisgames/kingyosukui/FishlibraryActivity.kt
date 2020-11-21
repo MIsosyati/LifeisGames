@@ -2,6 +2,7 @@ package com.lifeistech.android.lifeisgames.kingyosukui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lifeistech.android.lifeisgames.R
@@ -39,7 +40,7 @@ class FishlibraryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_fishlibrary)
 
        val adapter = Recyclerviewadapter(this)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
         recyclerView.adapter = adapter
         adapter.addAll(fish_library_data)
     }
