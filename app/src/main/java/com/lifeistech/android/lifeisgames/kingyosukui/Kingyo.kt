@@ -46,7 +46,7 @@ class Suihou(imageView: ImageView):Base("水泡眼", 20, 0, imageView,23){}
 
 class Tyoten(imageView: ImageView):Base("頂点眼", 20, 0, imageView,23){}
 
-
+class numaebi(imageView: ImageView):Base("ヌマエビ", 15, 0, imageView,40){}
 class Oosan(imageView: ImageView):Base("オオサンショウウオ", 100, 0, imageView,15){}
 
 

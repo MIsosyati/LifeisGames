@@ -30,7 +30,7 @@ class MSShopActivity : AppCompatActivity() {
         setContentView(R.layout.activity_msshop)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setTitle( "マインスイーパー：ショップ" );
+        title = "マインスイーパー：ショップ"
 
         list.onItemClickListener = OnItemClickListener { parent, view, position, id ->
             buyflag(position)
@@ -46,7 +46,7 @@ class MSShopActivity : AppCompatActivity() {
     }
 
     fun show() {
-        cointext.setText("店主：いらっしゃい！\n今流行りの旗はいかが？いつも99%OFFダヨ！\n(今は全部無料です)")
+        cointext.text = "店主：いらっしゃい！\n今流行りの旗はいかが？いつも99%OFFダヨ！\n(今は全部無料です)"
         //お客さんは今$coin コイン持ってるね～
         adapter = CustomListAdapter(this, images, names, infos)
         list.adapter = adapter
@@ -82,7 +82,7 @@ class MSShopActivity : AppCompatActivity() {
                 }
             }else{
                 //持っていない
-                infos[i] = costs[i].toString();
+                infos[i] = costs[i].toString()
                 infos[i] += "コイン"
             }
         }

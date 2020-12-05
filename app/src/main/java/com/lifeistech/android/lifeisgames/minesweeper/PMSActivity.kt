@@ -23,7 +23,7 @@ class PMSActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pms)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setTitle( "マインスイーパー：ホーム" );
+        title = "マインスイーパー：ホーム"
 
         blevel1.setOnClickListener {
             warp(1)

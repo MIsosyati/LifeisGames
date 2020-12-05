@@ -36,7 +36,7 @@ class MSActivity : AppCompatActivity() {
         setContentView(R.layout.activity_ms)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        setTitle("マインスイーパー");
+        title = "マインスイーパー"
         val data = getSharedPreferences("Data", Context.MODE_PRIVATE)
 
 
@@ -142,7 +142,7 @@ class MSActivity : AppCompatActivity() {
             }
             for (i in 0..48) {
                 if (blockinfo[i] > 10) {
-                    blockinfo[i] = 10;
+                    blockinfo[i] = 10
                 }
             }
         }
@@ -155,7 +155,7 @@ class MSActivity : AppCompatActivity() {
                 } else {
                     if (blockinfo[nowposition] == 10) {
                         //コレ爆弾です→爆発→そのまま
-                        waitanime++;
+                        waitanime++
                         time -= 5
                         timerani.visibility = View.INVISIBLE
                         boomani.visibility = View.VISIBLE
@@ -178,10 +178,10 @@ class MSActivity : AppCompatActivity() {
                         blockinfo[nowposition] = 100
                     } else {
                         //爆弾じゃない→ダメ！→そのまま
-                        time -= 5;
-                        waitanime++;
+                        time -= 5
+                        waitanime++
                         timerani.visibility = View.INVISIBLE
-                        errorani.setVisibility(View.VISIBLE)
+                        errorani.visibility = View.VISIBLE
                         showtimeforce()
                     }
                     blockvisible[nowposition] = true
@@ -217,9 +217,9 @@ class MSActivity : AppCompatActivity() {
                         } else {
                             time--
                         }
-                        timertext.setText("残り時間:$time 秒")
+                        timertext.text = "残り時間:$time 秒"
                         if (waitanime > 0) {
-                            waitanime--;
+                            waitanime--
                         } else {
                             timerani.visibility = View.VISIBLE
                             errorani.visibility = View.INVISIBLE
@@ -227,10 +227,10 @@ class MSActivity : AppCompatActivity() {
                         }
                     } else if (beforetime >= 0) {
                         if (beforetime == 0) {
-                            timertext.setText("残り時間:$time 秒")
+                            timertext.text = "残り時間:$time 秒"
                             running = true
                         } else {
-                            timertext.setText("開始まで:$beforetime 秒")
+                            timertext.text = "開始まで:$beforetime 秒"
                             beforetime--
                         }
                     }
@@ -243,7 +243,7 @@ class MSActivity : AppCompatActivity() {
     fun reload() {
         for (i in 0..48) {
             if (!blockvisible[i]!!) {
-                break;
+                break
             } else if (i == 48) {
                 running = false
                 if (!endgameshow) {
@@ -254,7 +254,7 @@ class MSActivity : AppCompatActivity() {
         gridView.adapter = GridAdapter(this, blockinfo, blockvisible, nowposition)
     }
 
-    var isitpausing = false;
+    var isitpausing = false
     var endgameshow = false
     fun endgame() {
         endgameshow = true
@@ -277,11 +277,11 @@ class MSActivity : AppCompatActivity() {
     }
 
     fun showtimeforce() {
-        timertext.setText("残り時間:$time 秒")
+        timertext.text = "残り時間:$time 秒"
     }
 
     override fun onPause() {
         super.onPause()
-        isitpausing = true;
+        isitpausing = true
     }
 }

@@ -7,3 +7,4 @@ open class Rankingrealm (
     open var catchvalue: Int = 0,
     open var Tensuu: Int = 0
 ): RealmObject()
+

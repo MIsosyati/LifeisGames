@@ -6,14 +6,18 @@ import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
 import android.content.Intent
 import android.os.Bundle
+import android.system.Os.close
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import io.realm.Realm
+import io.realm.RealmConfiguration
 import kotlinx.android.synthetic.main.activity_yatai.*
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
+import com.lifeistech.android.lifeisgames.realm as realm
 
 class Yataiactivity : AppCompatActivity() {
 
@@ -28,6 +32,13 @@ class Yataiactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yatai)
+        Realm.init(this)
+        val realmConfig = RealmConfiguration.Builder()
+            .deleteRealmIfMigrationNeeded()
+            .build()
+        Realm.setDefaultConfiguration(realmConfig)
+
+        val realm: Realm = Realm.getDefaultInstance()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setTitle( "金魚すくい：屋台" );
@@ -91,6 +102,7 @@ class Yataiactivity : AppCompatActivity() {
                 kingyo1.imageView.visibility = View.GONE
                 kingyo1 = popKingyo(imageView1)
 
+
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -107,6 +119,7 @@ class Yataiactivity : AppCompatActivity() {
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo2.imageView.visibility = View.GONE
                 kingyo2 = popKingyo(imageView2)
+
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -220,6 +233,11 @@ class Yataiactivity : AppCompatActivity() {
 
         setAnimRepeat(imageView6animSet, kingyo6.imageView)
         imageView6animSet.start()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
     }
 }
 
@@ -403,8 +421,12 @@ private fun popKingyo(view: ImageView):Base{
             return kingyo
 
         }
+        pop <180 -> {
+            val kingyo = numaebi(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
 
-
+        }
 
 
         else -> {
@@ -719,8 +741,6 @@ private fun setAnim3(v: ImageView): AnimatorSet {
     fromY = toY
 
 
-
-
     //こっちはフェードアウトさせてる増やすならこの前
     val kieruAnima: ObjectAnimator = ObjectAnimator.ofFloat(v, "alpha", 1f, 0f)
     //3秒かけて実行させます
@@ -746,7 +766,5 @@ private fun setAnim3(v: ImageView): AnimatorSet {
     // リストのAnimatorを順番に実行します
     animatorSet.playSequentially(animatorList)
     return animatorSet
-
-
 
 }

@@ -19,6 +19,7 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
         val kinygyoview:ImageView = view.findViewById(R.id.imageView8)
         val kingyoname:TextView = view.findViewById(R.id.fishname)
         val kingyonumber:TextView = view.findViewById(R.id.textView9)
+        val fish_category:TextView = view.findViewById(R.id.textView11)
        // val container: ConstraintLayout = view.findViewById(R.id.container)
     }
 
@@ -38,11 +39,13 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
             holder.kinygyoview.setImageResource(item.fishimage)
             holder.kingyoname.text = item.fishName
             holder.kingyonumber.text = item.fishnumber
+            holder.fish_category.text=item.fish_category
         }else{
             //捕まえてない時に表示するものを書く
             holder.kinygyoview.setImageResource(R.drawable.nodata)
             holder.kingyoname.text = "?????"
             holder.kingyonumber.text = item.fishnumber
+            holder.fish_category.text=item.fish_category
         }
 
         //holder.container.setBackgroundColor(Color.rgb(0, 255, 0))

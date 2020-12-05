@@ -1,8 +1,11 @@
 package com.lifeistech.android.lifeisgames.kingyosukui
 
-data class Fish_library_data (val fishimage: Int,
-      val fishnumber:String,
-      val fishName: String,
-      val fish_option: String,
-      val isCatched: Boolean = false
-)
+import io.realm.RealmObject
+
+open class Fish_library_data (var fishimage: Int = 0,
+      var fishnumber:String = "",
+      var fishName: String = "",
+      var fish_option: String = "",
+      var fish_category: String = "",
+      var isCatched: Boolean = false
+): RealmObject()
