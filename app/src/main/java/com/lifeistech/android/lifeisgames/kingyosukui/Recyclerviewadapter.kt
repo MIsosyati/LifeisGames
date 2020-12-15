@@ -40,6 +40,8 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
             holder.kingyoname.text = item.fishName
             holder.kingyonumber.text = item.fishnumber
             holder.fish_category.text=item.fish_category
+            //holder.fish_option.text=item.fish_category
+
         }else{
             //捕まえてない時に表示するものを書く
             holder.kinygyoview.setImageResource(R.drawable.nodata)
