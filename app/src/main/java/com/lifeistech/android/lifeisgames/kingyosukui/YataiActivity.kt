@@ -233,6 +233,9 @@ class Yataiactivity : AppCompatActivity() {
 
         setAnimRepeat(imageView6animSet, kingyo6.imageView)
         imageView6animSet.start()
+
+        setAnimRepeat(imageView7animSet, kingyo7.imageView)
+        imageView7animSet.start()
     }
 
     override fun onDestroy() {
@@ -277,7 +280,7 @@ private fun setAnimRepeat(set:AnimatorSet, view:ImageView){
 }
 
 private fun popKingyo(view: ImageView):Base{
-    val pop = Random.nextInt(173)
+    val pop = Random.nextInt(182)
     when{
         pop < 15 -> {
             val kingyo = WakinB(view)
@@ -435,6 +438,7 @@ private fun popKingyo(view: ImageView):Base{
             return kingyo
         }
     }
+
 
 
 }
@@ -766,5 +770,7 @@ private fun setAnim3(v: ImageView): AnimatorSet {
     // リストのAnimatorを順番に実行します
     animatorSet.playSequentially(animatorList)
     return animatorSet
+
+
 
 }

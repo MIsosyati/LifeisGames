@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.lifeistech.android.lifeisgames.kingyosukui.FishlibraryActivity
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_kingyomain.*
 
 
 class KingyoMainActivity : AppCompatActivity() {
+
+
 
     override fun onSupportNavigateUp(): Boolean {
         val intent = Intent(application, MainActivity::class.java)
