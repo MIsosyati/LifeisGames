@@ -3,8 +3,6 @@ package com.lifeistech.android.lifeisgames.kingyosukui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.lifeistech.android.lifeisgames.R
 import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_fishlibrary.*

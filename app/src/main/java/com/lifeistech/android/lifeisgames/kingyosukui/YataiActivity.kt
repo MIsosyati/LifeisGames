@@ -4,16 +4,20 @@ import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.system.Os.close
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import com.lifeistech.android.lifeisgames.kingyosukui.Fish_library_data
 import io.realm.Realm
 import io.realm.RealmConfiguration
+import io.realm.RealmQuery
+import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_yatai.*
+import java.util.*
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.random.Random
@@ -29,6 +33,7 @@ class Yataiactivity : AppCompatActivity() {
         return super.onSupportNavigateUp()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yatai)
@@ -38,7 +43,7 @@ class Yataiactivity : AppCompatActivity() {
             .build()
         Realm.setDefaultConfiguration(realmConfig)
 
-        val realm: Realm = Realm.getDefaultInstance()
+val realm: Realm = Realm.getDefaultInstance()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setTitle( "金魚すくい：屋台" );
@@ -46,7 +51,6 @@ class Yataiactivity : AppCompatActivity() {
         backbutton.setOnClickListener {
             finish()
         }
-
 
         button7.setOnClickListener {
             val intent= Intent(this, ShopActivity::class.java)
@@ -63,10 +67,6 @@ class Yataiactivity : AppCompatActivity() {
         var kingyo6 = popKingyo(imageView6)
         var kingyo7 = popKingyo(imageView7)
 
-
-
-
-
         //すくえるか否かの判定用
         var hantei = 0
         //このゲームの所持金
@@ -74,9 +74,10 @@ class Yataiactivity : AppCompatActivity() {
         //ポイの値段
         var catchvalue = 5
         textView4.text = tuca.toString() + "ポイント"
+        val id =UUID.randomUUID().toString()
 
-
-
+        var fisharraylist = arrayListOf<String>()
+        val fishlist = realm.where<Fish_library_data>().findAll()
 
 
         //変更：アニメーションのランダム化
@@ -101,6 +102,7 @@ class Yataiactivity : AppCompatActivity() {
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo1.imageView.visibility = View.GONE
                 kingyo1 = popKingyo(imageView1)
+
 
 
             } else {
@@ -237,12 +239,13 @@ class Yataiactivity : AppCompatActivity() {
         setAnimRepeat(imageView7animSet, kingyo7.imageView)
         imageView7animSet.start()
     }
-
     override fun onDestroy() {
         super.onDestroy()
         realm.close()
     }
 }
+
+
 
 //ランダムにアニメーションを設定するメソッド
 private fun randomAnim(view:ImageView):AnimatorSet{
@@ -266,6 +269,7 @@ private fun setAnimRepeat(set:AnimatorSet, view:ImageView){
             setAnimRepeat(next, view)
             next.start()
             view.visibility = View.VISIBLE
+
         }
 
         override fun onAnimationRepeat(p0: Animator?) {}
@@ -278,7 +282,7 @@ private fun setAnimRepeat(set:AnimatorSet, view:ImageView){
         override fun onAnimationStart(p0: Animator?) {}
     })
 }
-
+//金魚の確率設定
 private fun popKingyo(view: ImageView):Base{
     val pop = Random.nextInt(182)
     when{
@@ -676,8 +680,6 @@ private fun setAnim2(v: ImageView): AnimatorSet {
 
 }
 
-
-
 //3個目を作ってやろうじゃないか
 private fun setAnim3(v: ImageView): AnimatorSet {
     //追加：移動元・今の座標
@@ -772,5 +774,8 @@ private fun setAnim3(v: ImageView): AnimatorSet {
     return animatorSet
 
 
-
 }
+//private fun zukan(){
+//    realm.beginTransaction()
+//
+//}
