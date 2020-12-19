@@ -37,10 +37,10 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
         if(item.isCatched){
          //捕まえていたときに表示するコードを書　
             holder.kinygyoview.setImageResource(item.fishimage)
-            holder.kingyoname.text = item.fishName
-            holder.kingyonumber.text = item.fishnumber
-            holder.fish_category.text=item.fish_category
-            //holder.fish_option.text=item.fish_category
+            holder.kingyoname.setText(item.fishName)
+            holder.kingyonumber.setText(item.fishnumber)
+            holder.fish_category.setText(item.fish_category)
+
 
         }else{
             //捕まえてない時に表示するものを書く
