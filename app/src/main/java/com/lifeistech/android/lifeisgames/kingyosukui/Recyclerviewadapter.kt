@@ -35,7 +35,7 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
        val item =items[position]
         if(item.isCatched){
-         //捕まえていたときに表示するコードを書く
+         //捕まえていたときに表示するコードを書　
             holder.kinygyoview.setImageResource(item.fishimage)
             holder.kingyoname.text = item.fishName
             holder.kingyonumber.text = item.fishnumber

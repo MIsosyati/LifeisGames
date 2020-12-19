@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.lifeistech.android.lifeisgames.kingyosukui.Fish_library_data
+import com.lifeistech.android.lifeisgames.kingyosukui.Rankingrealm
 import io.realm.Realm
 import io.realm.RealmConfiguration
 import io.realm.RealmQuery
@@ -37,13 +38,19 @@ class Yataiactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_yatai)
-        Realm.init(this)
-        val realmConfig = RealmConfiguration.Builder()
-            .deleteRealmIfMigrationNeeded()
-            .build()
-        Realm.setDefaultConfiguration(realmConfig)
 
-val realm: Realm = Realm.getDefaultInstance()
+        val realm: Realm = Realm.getDefaultInstance()
+
+
+        var data = realm.where(Rankingrealm::class.java).findFirst()
+        if (data == null){
+//            realm.executeTransaction {
+//                data = it.createObject(Rankingrealm::class.java)
+//            }
+
+        }
+
+
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setTitle( "金魚すくい：屋台" );
@@ -74,10 +81,9 @@ val realm: Realm = Realm.getDefaultInstance()
         //ポイの値段
         var catchvalue = 5
         textView4.text = tuca.toString() + "ポイント"
-        val id =UUID.randomUUID().toString()
 
         var fisharraylist = arrayListOf<String>()
-        val fishlist = realm.where<Fish_library_data>().findAll()
+        var fishlist = realm.where<Fish_library_data>().findAll()
 
 
         //変更：アニメーションのランダム化
@@ -102,8 +108,13 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo1.imageView.visibility = View.GONE
                 kingyo1 = popKingyo(imageView1)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
 
-
+                checkLibrary(kingyo1.name)
 
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
@@ -121,6 +132,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo2.imageView.visibility = View.GONE
                 kingyo2 = popKingyo(imageView2)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo2.name)
 
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
@@ -139,6 +156,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo3.imageView.visibility = View.GONE
                 kingyo3 = popKingyo(imageView3)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo3.name)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -155,6 +178,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo4.imageView.visibility = View.GONE
                 kingyo4 = popKingyo(imageView4)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo4.name)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -173,6 +202,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo5.imageView.visibility = View.GONE
                 kingyo5 = popKingyo(imageView5)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo5.name)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -189,6 +224,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo6.imageView.visibility = View.GONE
                 kingyo6 = popKingyo(imageView6)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo6.name)
 
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
@@ -206,6 +247,12 @@ val realm: Realm = Realm.getDefaultInstance()
                 textView4.text = tuca.toString() + "ポイント"
                 kingyo7.imageView.visibility = View.GONE
                 kingyo7 = popKingyo(imageView7)
+                if (data != null) {
+                    realm.executeTransaction {
+                        data.kingyogoukei++
+                    }
+                }
+                checkLibrary(kingyo7.name)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -242,6 +289,14 @@ val realm: Realm = Realm.getDefaultInstance()
     override fun onDestroy() {
         super.onDestroy()
         realm.close()
+    }
+}
+
+
+private fun checkLibrary(fishName: String){
+    val data: Fish_library_data? = realm.where(Fish_library_data::class.java).equalTo("fishName", fishName).findFirst()
+    realm.executeTransaction {
+        data?.isCatched = true
     }
 }
 
