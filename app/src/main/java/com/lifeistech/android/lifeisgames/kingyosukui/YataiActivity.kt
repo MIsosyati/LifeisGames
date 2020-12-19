@@ -64,8 +64,6 @@ class Yataiactivity : AppCompatActivity() {
             startActivity(intent);
         }
 
-
-
         var kingyo1 = popKingyo(imageView1)
         var kingyo2 = popKingyo(imageView2)
         var kingyo3 = popKingyo(imageView3)
@@ -102,12 +100,6 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <= kingyo1.hantei) {
-                textView3.text = kingyo1.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo1.value
-                tuca = tuca + kingyo1.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo1.imageView.visibility = View.GONE
-                kingyo1 = popKingyo(imageView1)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
@@ -116,6 +108,12 @@ class Yataiactivity : AppCompatActivity() {
 
                 checkLibrary(kingyo1.name)
 
+                textView3.text = kingyo1.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo1.value
+                tuca = tuca + kingyo1.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo1.imageView.visibility = View.GONE
+                kingyo1 = popKingyo(imageView1)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -126,12 +124,6 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <= kingyo2.hantei) {
-                textView3.text = kingyo2.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo2.value
-                tuca = tuca + kingyo2.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo2.imageView.visibility = View.GONE
-                kingyo2 = popKingyo(imageView2)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
@@ -139,6 +131,12 @@ class Yataiactivity : AppCompatActivity() {
                 }
                 checkLibrary(kingyo2.name)
 
+                textView3.text = kingyo2.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo2.value
+                tuca = tuca + kingyo2.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo2.imageView.visibility = View.GONE
+                kingyo2 = popKingyo(imageView2)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -150,18 +148,19 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <=kingyo3.hantei) {
-                textView3.text = kingyo3.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo3.value
-                tuca = tuca + kingyo3.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo3.imageView.visibility = View.GONE
-                kingyo3 = popKingyo(imageView3)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
                     }
                 }
                 checkLibrary(kingyo3.name)
+                textView3.text = kingyo3.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo3.value
+                tuca = tuca + kingyo3.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo3.imageView.visibility = View.GONE
+                kingyo3 = popKingyo(imageView3)
+
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -172,18 +171,19 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <= kingyo4.hantei) {
-                textView3.text = kingyo4.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo4.value
-                tuca = tuca + kingyo4.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo4.imageView.visibility = View.GONE
-                kingyo4 = popKingyo(imageView4)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
                     }
                 }
                 checkLibrary(kingyo4.name)
+                textView3.text = kingyo4.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo4.value
+                tuca = tuca + kingyo4.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo4.imageView.visibility = View.GONE
+                kingyo4 = popKingyo(imageView4)
+
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -196,18 +196,18 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <= kingyo5.hantei) {
-                textView3.text = kingyo5.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo5.value
-                tuca = tuca + kingyo5.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo5.imageView.visibility = View.GONE
-                kingyo5 = popKingyo(imageView5)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
                     }
                 }
                 checkLibrary(kingyo5.name)
+                textView3.text = kingyo5.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo5.value
+                tuca = tuca + kingyo5.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo5.imageView.visibility = View.GONE
+                kingyo5 = popKingyo(imageView5)
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
@@ -217,19 +217,21 @@ class Yataiactivity : AppCompatActivity() {
             tuca = tuca - catchvalue
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
+
             if (hantei <= kingyo6.hantei) {
-                textView3.text = kingyo6.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo6.value
-                tuca = tuca + kingyo1.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo6.imageView.visibility = View.GONE
-                kingyo6 = popKingyo(imageView6)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
                     }
                 }
                 checkLibrary(kingyo6.name)
+                textView3.text = kingyo6.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo6.value
+                tuca = tuca + kingyo1.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo6.imageView.visibility = View.GONE
+                kingyo6 = popKingyo(imageView6)
+
 
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
@@ -241,18 +243,20 @@ class Yataiactivity : AppCompatActivity() {
             textView4.text = tuca.toString() + "ポイント"
             hantei = Random.nextInt(100)
             if (hantei <= kingyo7.hantei) {
-                textView3.text = kingyo7.name + """を掬いました!
-            |ポイント＋""".trimMargin() + kingyo7.value
-                tuca = tuca + kingyo7.value
-                textView4.text = tuca.toString() + "ポイント"
-                kingyo7.imageView.visibility = View.GONE
-                kingyo7 = popKingyo(imageView7)
                 if (data != null) {
                     realm.executeTransaction {
                         data.kingyogoukei++
                     }
                 }
                 checkLibrary(kingyo7.name)
+
+                textView3.text = kingyo7.name + """を掬いました!
+            |ポイント＋""".trimMargin() + kingyo7.value
+                tuca = tuca + kingyo7.value
+                textView4.text = tuca.toString() + "ポイント"
+                kingyo7.imageView.visibility = View.GONE
+                kingyo7 = popKingyo(imageView7)
+
             } else {
                 textView3.text = "穴が開いて金魚が落ちてしまった"
             }
