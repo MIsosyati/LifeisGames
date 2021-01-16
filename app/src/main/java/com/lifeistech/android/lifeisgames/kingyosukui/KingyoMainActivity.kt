@@ -13,11 +13,11 @@ import kotlinx.android.synthetic.main.activity_kingyomain.*
 class KingyoMainActivity : AppCompatActivity() {
     val fishLibraryDataList: List<Fish_library_data> = listOf(
         Fish_library_data(R.drawable.wakinr,"No.001","ワキン(赤)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ","リアル"),
-        Fish_library_data(R.drawable.wakinw,"No.002","ワキン(黒)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ","リアル"),
-        Fish_library_data(R.drawable.nodata,"No.003","ワキン(サラサ)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ","リアル"),
-        Fish_library_data(R.drawable.nodata,"No.004","デメキン(赤)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
-        Fish_library_data(R.drawable.nodata,"No.005","デメキン(黒)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
-        Fish_library_data(R.drawable.nodata,"No.006","デメキン(三色)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
+        Fish_library_data(R.drawable.nodata,"No.002","ワキン(黒)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ","リアル"),
+        Fish_library_data(R.drawable.wakinw,"No.003","ワキン(サラサ)","金魚の屋台の定番といえばこいつ。金魚の原点ともいえる品種であり先祖はフナ","リアル"),
+        Fish_library_data(R.drawable.demer,"No.004","デメキン(赤)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
+        Fish_library_data(R.drawable.demeb,"No.005","デメキン(黒)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
+        Fish_library_data(R.drawable.demes,"No.006","デメキン(三色)","屋台ではちょっとレア扱い。難易度は低めだが取れると嬉しい反面、目が出てるため弱く、すぐ死ぬ","リアル"),
         Fish_library_data(R.drawable.nodata,"No.007","琉金(赤)","ずんぐりとした体形を持つ。尾が長めのため泳ぐと綺麗。泳ぎは比較的ゆっくりとしている","リアル"),
         Fish_library_data(R.drawable.nodata,"No.008","琉金(キャリコ)","ずんぐりとした体形を持つ。尾が長めのため泳ぐと綺麗。泳ぎは比較的ゆっくりとしている","リアル"),
         Fish_library_data(R.drawable.nodata,"No.009","蘭鋳(赤)","背びれがなく丸い体形をしている。筆舌すべきは頭の肉瘤である。この肉瘤がライオンを彷彿ああせるため英名はライオンヘッドゴールドフィッシュ","リアル"),
@@ -61,6 +61,7 @@ class KingyoMainActivity : AppCompatActivity() {
                     temp.isCatched = fish.isCatched
                     temp.fish_category = fish.fish_category
                     temp.fish_option = fish.fish_option
+                    temp.fishimage = fish.fishimage
 
                 }
 

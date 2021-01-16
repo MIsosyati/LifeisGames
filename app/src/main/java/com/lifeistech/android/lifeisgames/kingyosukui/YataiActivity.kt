@@ -80,8 +80,8 @@ class Yataiactivity : AppCompatActivity() {
         var catchvalue = 5
         textView4.text = tuca.toString() + "ポイント"
 
-        var fisharraylist = arrayListOf<String>()
-        var fishlist = realm.where<Fish_library_data>().findAll()
+//        var fisharraylist = arrayListOf<String>()
+//        var fishlist = realm.where<Fish_library_data>().findAll()
 
 
         //変更：アニメーションのランダム化
@@ -368,7 +368,7 @@ private fun popKingyo(view: ImageView):Base{
 
         pop < 55 -> {
             val kingyo = DemeB(view)
-            kingyo.imageView.setImageResource(R.drawable.deme)
+            kingyo.imageView.setImageResource(R.drawable.demer)
             return kingyo
         }
         pop < 65 -> {
