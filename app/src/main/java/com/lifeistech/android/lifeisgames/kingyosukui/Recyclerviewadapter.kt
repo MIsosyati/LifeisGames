@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.lifeistech.android.lifeisgames.R
@@ -20,7 +21,7 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
         val kingyoname:TextView = view.findViewById(R.id.fishname)
         val kingyonumber:TextView = view.findViewById(R.id.textView9)
         val fish_category:TextView = view.findViewById(R.id.textView11)
-       // val container: ConstraintLayout = view.findViewById(R.id.container)
+        val container: ConstraintLayout = view.findViewById(R.id.container)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
@@ -40,6 +41,13 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
             holder.kingyoname.setText(item.fishName)
             holder.kingyonumber.setText(item.fishnumber)
             holder.fish_category.setText(item.fish_category)
+            holder.container.setOnClickListener{
+                AlertDialog.Builder(context)
+                    .setTitle(item.fishName)
+                    .setMessage(item.fish_option)
+                    .setPositiveButton("OK", {dialog, which ->})
+                    .show()
+            }
 
 
         }else{
@@ -59,3 +67,5 @@ class Recyclerviewadapter(private val context:Context):RecyclerView.Adapter<Recy
         notifyDataSetChanged()
     }
 }
+
+
