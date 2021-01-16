@@ -33,6 +33,12 @@ class KingyoMainActivity : AppCompatActivity() {
         Fish_library_data(R.drawable.nodata,"No.0019" ,"水泡眼","目の下に大きな袋をぶら下げた品種。袋は破れやすく、出目金と同じく弱りやすい","リアル"),
         Fish_library_data(R.drawable.nodata,"No.0020" ,"ピンポンパール","まんまるで粒々した体をしている。そのため泳げなくなることも多々あるらしい","リアル"),
         Fish_library_data(R.drawable.nodata,"No.0021" ,"頂点眼","名前の通り目が真上を向いている。インパクトがある姿は水槽で見ていて面白い","リアル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0001" ,"天使金魚","空に恋焦がれた末に羽を手に入れた金魚。しかし体が重いため飛べない","オリジナル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0002" ,"ファイヤーフィッシュ","怒りの炎を具現化した金魚。炎を出せるようになったきっかけは失恋らしい。","オリジナル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0003" ,"ファイヤーフィッシュG","想いを寄せる彼女が親友と付き合ってることが判明、苦しみでパワーアップしたファイヤーフィッシュの成れの果て","オリジナル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0004" ,"オンザケーキ","背中に大きなケーキでオスを引き寄せる、メスしか存在しない。天敵のオスも引き寄せてしまうため絶滅危惧種","オリジナル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0005" ,"ゾンビフィッシュ","とある研究所で品種改良された品種、どんな環境でも水さえあれば生き続けるので飼いやすいが見た目が悪いため販売には至られなかった","オリジナル"),
+        Fish_library_data(R.drawable.nodata,"No.O-0006" ,"エレガントアイ","美しさを追求した結果目がとても大きくなり模様も目に似るようになった。人間の好みは大きく分かれる。","オリジナル"),
         Fish_library_data(R.drawable.nodata,"No.0100","ヌマエビ","淡水の池などに生息する。足を動かして動く姿が可愛い","その他"),
         Fish_library_data(R.drawable.nodata,"No.00000" ,"オオサンショウウオ","特別天然記念物で世界最大級の両生類。寿命は七十年近くある個体も。瞳が可愛い、可愛い。何故こいつがNO.0なのか…それは主の推しだからである。不平不満は認めない","その他")
     )

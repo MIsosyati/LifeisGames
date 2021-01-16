@@ -368,7 +368,13 @@ private fun popKingyo(view: ImageView):Base{
 
         pop < 55 -> {
             val kingyo = DemeB(view)
-            kingyo.imageView.setImageResource(R.drawable.demer)
+            kingyo.imageView.setImageResource(R.drawable.deme)
+            return kingyo
+        }
+
+        pop < 60 -> {
+            val kingyo = DemeR(view)
+            kingyo.imageView.setImageResource(R.drawable.deme)
             return kingyo
         }
         pop < 65 -> {
@@ -493,8 +499,6 @@ private fun popKingyo(view: ImageView):Base{
             return kingyo
 
         }
-
-
         else -> {
             val kingyo = Oosan(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
