@@ -491,26 +491,26 @@ private fun popKingyo(view: ImageView):Base{
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
         }
-        pop <183 -> {
-            val kingyo = tensi(view)
-            kingyo.imageView.setImageResource(R.drawable.kingyo)
-            return kingyo
-        }
-        pop <186 -> {
-            val kingyo = honoo(view)
-            kingyo.imageView.setImageResource(R.drawable.kingyo)
-            return kingyo
-        }
-        pop <189 -> {
-            val kingyo = honooG(view)
-            kingyo.imageView.setImageResource(R.drawable.kingyo)
-            return kingyo
-        }
-        pop <192 -> {
-            val kingyo = cake(view)
-            kingyo.imageView.setImageResource(R.drawable.kingyo)
-            return kingyo
-        }
+//        pop <183 -> {
+//            val kingyo = tensi(view)
+//            kingyo.imageView.setImageResource(R.drawable.kingyo)
+//            return kingyo
+//        }
+//        pop <186 -> {
+//            val kingyo = honoo(view)
+//            kingyo.imageView.setImageResource(R.drawable.kingyo)
+//            return kingyo
+//        }
+//        pop <189 -> {
+//            val kingyo = honooG(view)
+//            kingyo.imageView.setImageResource(R.drawable.kingyo)
+//            return kingyo
+//        }
+//        pop <192 -> {
+//            val kingyo = cake(view)
+//            kingyo.imageView.setImageResource(R.drawable.kingyo)
+//            return kingyo
+//        }
         else -> {
             val kingyo = Oosan(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)

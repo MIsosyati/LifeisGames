@@ -51,20 +51,19 @@ class numaebi(imageView: ImageView):Base("ヌマエビ", 15, 0, imageView,40){}
 class Oosan(imageView: ImageView):Base("オオサンショウウオ", 100, 0, imageView,15){}
 
 
+class tensi(imageView: ImageView):Base("天使金魚",30,1,imageView,10){}
 
-class tensi(imageView: ImageView):Base("天使金魚",60,1,imageView,10){}
+class honoo(imageView: ImageView):Base("ファイヤーフィッシュ",15,1,imageView,20){}
 
-class honoo(imageView: ImageView):Base("ファイヤーフィッシュ",35,1,imageView,20){}
+class honooG(imageView: ImageView):Base("ファイヤーフィッシュG",25,1,imageView,20){}
 
-class honooG(imageView: ImageView):Base("ファイヤーフィッシュG",45,1,imageView,20){}
+class cake(imageView: ImageView):Base("オンザケーキ",20,1,imageView,20){}
 
-class cake(imageView: ImageView):Base("オンザケーキ",50,1,imageView,20){}
+class zinbu(imageView: ImageView):Base("ゾンビフィッシュ",20,1,imageView,45){}
 
-class zinbu(imageView: ImageView):Base("ゾンビフィッシュ",25,1,imageView,45){}
+class eye(imageView: ImageView):Base("エレガントアイ",23,1,imageView,40){}
 
-class eye(imageView: ImageView):Base("エレガントアイ",30,1,imageView,40){}
 
-//class tensi(imageView: ImageView):Base("",50,1,imageView,20){}
 
 
 

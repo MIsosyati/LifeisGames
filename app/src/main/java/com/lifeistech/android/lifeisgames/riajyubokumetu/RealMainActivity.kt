@@ -82,7 +82,7 @@ class RealMainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_realmain)
 
         // ボタンを押すと3行4列で並んでいるTextViewに独自クラスで定義した値が表示されて，ついでに値によって色が変わるアプリ
 
@@ -117,6 +117,7 @@ class RealMainActivity : AppCompatActivity() {
             arrayOf(doa1,doa2,doa3,doa4),
             arrayOf(doa5,doa6,doa7,doa8),
             arrayOf(doa9,doa10,doa11,doa12)
+
         )
 
         for (i in 0..2){
