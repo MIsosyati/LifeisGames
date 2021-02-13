@@ -343,7 +343,7 @@ private fun setAnimRepeat(set:AnimatorSet, view:ImageView){
 }
 //金魚の確率設定
 private fun popKingyo(view: ImageView):Base{
-    val pop = Random.nextInt(182)
+    val pop = Random.nextInt(185)
     when{
         pop < 15 -> {
             val kingyo = WakinB(view)
@@ -449,55 +449,67 @@ private fun popKingyo(view: ImageView):Base{
             val kingyo = Sakura(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <140 -> {
             val kingyo = Suihou(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <145 -> {
             val kingyo = Oranda(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <150 -> {
             val kingyo = Azuma(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <158 -> {
             val kingyo = Rukin(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <166 -> {
             val kingyo = RukinK(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
 
         pop <171 -> {
             val kingyo = Tyoten(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
         }
         pop <180 -> {
             val kingyo = numaebi(view)
             kingyo.imageView.setImageResource(R.drawable.kingyo)
             return kingyo
-
+        }
+        pop <183 -> {
+            val kingyo = tensi(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+        }
+        pop <186 -> {
+            val kingyo = honoo(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+        }
+        pop <189 -> {
+            val kingyo = honooG(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
+        }
+        pop <192 -> {
+            val kingyo = cake(view)
+            kingyo.imageView.setImageResource(R.drawable.kingyo)
+            return kingyo
         }
         else -> {
             val kingyo = Oosan(view)
@@ -838,7 +850,3 @@ private fun setAnim3(v: ImageView): AnimatorSet {
 
 
 }
-//private fun zukan(){
-//    realm.beginTransaction()
-//
-//}
