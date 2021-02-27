@@ -8,12 +8,25 @@ import android.graphics.Rect
 import android.view.View
 import kotlin.random.Random
 
+val leftX = 350f
+val topY = 350f
+val rightX = 550f
+val bottomY = 450f
+class Block{
+    val leftX = 350f
+    val topY = 350f
+    val rightX = 550f
+    val bottomY = 450f
+}
 class Ball {
     val NOT_REF = 0
     val REF_X = 1
     val REF_Y = 2
     val REF_BOTH = 3
     val GAME_OVER = 4
+    var BLOCK_BREAKING = false
+    var RESPORN_BLOCK = false
+    var count = 0
 
     //追加：タップ不可な範囲．上から2/3はタップしても無意味
     val topMargin = 600f
@@ -51,7 +64,23 @@ class Ball {
         val gameOverFlag = yMax < tempY
         val xRefFlag = xMax < tempX || tempX < 0
         val yRefFlag = tempY < 0
+        //ブロック反射判定
+        val blockXFlag = pointX<=leftX||rightX<=pointX
+        val blockYFlag = pointY<=topY||bottomY<=pointY
+        if(leftX<=tempX && tempX<=rightX && topY<=tempY && tempY<= bottomY&&BLOCK_BREAKING == false)
+        {
 
+            return when{
+                blockXFlag -> { BLOCK_BREAKING = true
+                    count++
+                    REF_X}
+                blockYFlag -> { BLOCK_BREAKING = true
+                    count++
+                    REF_Y }
+
+                else -> NOT_REF
+            }
+        }
         return when{
             gameOverFlag -> GAME_OVER
             xRefFlag && yRefFlag -> REF_BOTH
@@ -67,6 +96,7 @@ class Ball {
         if (tapY <= topMargin * mulY) {
             return false
         }
+        RESPORN_BLOCK = true
 
         val tapXRange = (tapWidth * mulX) /2
         val tapYRange = (tapHeigth * mulY) / 2
@@ -84,8 +114,8 @@ class Ball {
         } else {
             return false
         }
-    }
 
+    }
     //追加：タップ可能な範囲をRect型で返却するメソッド
     fun getTapArea():Rect{
         //追加実装：右が0，上がタップ不可な範囲×縦の倍率，左がxの最大値，下がyの最大値であるRect型を返す処理を実装
@@ -112,18 +142,34 @@ class Ball {
         vecY = 0f
     }
 }
-
 class MyView(ctx: Context) : View(ctx) {
     val paint = Paint()
     var ball = Ball()
+    var block = Block()
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        //ブロック削除行程
+
         //追加：タップ可能な範囲を明るい灰色で描画する
         paint.color = Color.LTGRAY
         canvas.drawRect(ball.getTapArea(), paint)
         //変更：ボールを黒で描画する
         paint.color = Color.BLACK
-        canvas.drawCircle(ball.pointX, ball.pointY, (20*ball.mulX), paint)
+        canvas.drawCircle(ball.pointX, ball.pointY, (25*ball.mulX), paint)
+        //追加：スタートでブロックを赤で追加
+        if (ball.RESPORN_BLOCK == true) {
+            paint.color = Color.rgb(200,0,0)
+            canvas.drawRect(block.leftX,block.topY,block.rightX,block.bottomY,paint)
+            ball.BLOCK_BREAKING = false
+            ball.RESPORN_BLOCK = false
+        }
+        if (ball.BLOCK_BREAKING == false){
+            paint.color = Color.rgb(200,0,0)
+            canvas.drawRect(block.leftX,block.topY,block.rightX,block.bottomY,paint)
+        }
+        //当たったらブロック削除
+        //もう一回ボールタップでブロック再配置
+
     }
 }

@@ -44,9 +44,6 @@ class Yataiactivity : AppCompatActivity() {
 
         var data = realm.where(Rankingrealm::class.java).findFirst()
         if (data == null){
-//            realm.executeTransaction {
-//                data = it.createObject(Rankingrealm::class.java)
-//            }
 
         }
 
@@ -847,6 +844,4 @@ private fun setAnim3(v: ImageView): AnimatorSet {
     // リストのAnimatorを順番に実行します
     animatorSet.playSequentially(animatorList)
     return animatorSet
-
-
 }
